@@ -1,1 +1,78 @@
-<p>Hello World!</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Maurício - Desenvolvedor Web">
+  <title>Meu Portfólio</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="nav container">
+      <h1 class="logo">Maurício</h1>
+
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="about">Sobre</a></li>
+        <li><a href="#projects" data-i18n="projects">Projetos</a></li>
+        <li><a href="#contact" data-i18n="contact">Contato</a></li>
+      </ul>
+
+      <!-- IDIOMAS -->
+      <div class="lang-switch">
+        <button onclick="setLanguage('pt')">PT</button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('es')">ES</button>
+        <button onclick="toggleTheme()">🌙</button>
+      </div>
+
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container" data-animate>
+    <div>
+      <h2 data-i18n="title">Desenvolvedor Front-End</h2>
+      <p data-i18n="subtitle">Criando experiências digitais modernas</p>
+      <a href="#projects" class="btn" data-i18n="cta">Ver Projetos</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="about" class="section container" data-animate>
+    <h2 data-i18n="about">Sobre mim</h2>
+    <p data-i18n="about_text">
+      Sou desenvolvedor focado em criar interfaces bonitas, rápidas e responsivas.
+    </p>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projects" class="section container" data-animate>
+    <h2 data-i18n="projects">Projetos</h2>
+
+    <div class="projects-grid">
+      <div class="card">
+        <img src="assets/img/projeto1.jpg" alt="Projeto 1">
+        <h3>Projeto 1</h3>
+        <p>Descrição breve do projeto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contact" class="section container" data-animate>
+    <h2 data-i18n="contact">Contato</h2>
+    <p>Email: seuemail@email.com</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Maurício</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
