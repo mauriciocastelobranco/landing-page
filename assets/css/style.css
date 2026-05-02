@@ -27,6 +27,73 @@ body {
   margin: auto;
 }
 
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* mantém alinhado à esquerda */
+  gap: 10px;
+}
+
+.hero-text h2 {
+  font-size: 2.8rem;
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  color: #64748b;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 5%;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* hover: vira colorido */
+.hero-image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  background: var(--primary);
+}
+
+.social-links img {
+  width: 18px;
+  height: 18px;
+}
+
 /* NAVBAR PREMIUM */
 .header {
   position: sticky;
@@ -72,9 +139,16 @@ body {
   list-style: none;
 }
 
+.lang-switch {
+  display: flex;   /* 👈 resolve o problema de ficar um em cima do outro */
+  gap: 8px;
+}
+
 /* BOTÕES DE IDIOMA */
 .lang-switch button {
   margin-left: 5px;
+  display: flex;
+  gap: 8px;
   padding: 5px 8px;
   border: none;
   border-radius: 6px;
@@ -82,6 +156,12 @@ body {
   color: white;
   cursor: pointer;
   font-size: 0.8rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* HERO */
@@ -188,10 +268,35 @@ body.light {
 
 /* MOBILE */
 .menu-toggle {
-  display: none;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
 @media (max-width: 768px) {
+    .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
@@ -231,4 +336,52 @@ body.light {
 
 .projects-grid .card:nth-child(4) {
   transition-delay: 0.4s;
+}
+
+/* CONTAINER DOS CONTROLES */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BOTÕES PADRÃO */
+.lang-switch button,
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.lang-switch button:hover,
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  background: var(--primary);
+}
+
+/* BOTÃO ATIVO (idioma atual) */
+.lang-switch button.active {
+  background: var(--primary);
+}
+
+/* ÍCONES SVG */
+.lang-switch img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* DARK MODE ICON */
+.theme-toggle .icon {
+  font-size: 16px;
 }

@@ -21,7 +21,7 @@ elements.forEach(el => observer.observe(el));
 // SISTEMA DE TRADUÇÃO
 const translations = {
   pt: {
-    title: "Desenvolvedor Front-End",
+    title: "Desenvolvedor Fullstack",
     subtitle: "Criando experiências digitais modernas",
     cta: "Ver Projetos",
     about: "Sobre",
@@ -30,7 +30,7 @@ const translations = {
     contact: "Contato"
   },
   en: {
-    title: "Front-End Developer",
+    title: "Fullstack Developer",
     subtitle: "Creating modern digital experiences",
     cta: "View Projects",
     about: "About",
@@ -39,7 +39,7 @@ const translations = {
     contact: "Contact"
   },
   es: {
-    title: "Desarrollador Front-End",
+    title: "Desarrollador Fullstack",
     subtitle: "Creando experiencias digitales modernas",
     cta: "Ver Proyectos",
     about: "Sobre mí",
@@ -54,27 +54,53 @@ function setLanguage(lang) {
     const key = el.getAttribute('data-i18n');
     el.textContent = translations[lang][key];
   });
+
+  // destacar botão ativo
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+
+  localStorage.setItem('lang', lang);
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('lang') || 'pt';
+  setLanguage(savedLang);
+});
 
 function toggleTheme() {
-  if (document.body.classList.contains('dark')) {
-    document.body.classList.remove('dark');
-    document.body.classList.add('light');
-    localStorage.setItem('theme', 'light');
-  } else {
-    document.body.classList.remove('light');
-    document.body.classList.add('dark');
+  const body = document.body;
+  const icon = document.querySelector('.theme-toggle .icon');
+
+  body.classList.toggle('dark');
+
+  if (body.classList.contains('dark')) {
+    icon.textContent = '☀️';
     localStorage.setItem('theme', 'dark');
+  } else {
+    icon.textContent = '🌙';
+    localStorage.setItem('theme', 'light');
   }
 }
 
-// carregar preferência
-window.addEventListener('DOMContentLoaded', () => {
-  const theme = localStorage.getItem('theme');
+// carregar ao abrir a página
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  const icon = document.querySelector('.theme-toggle .icon');
 
-  if (theme === 'dark') {
+  if (savedTheme === 'dark') {
     document.body.classList.add('dark');
-  } else {
-    document.body.classList.add('light');
+    icon.textContent = '☀️';
   }
+});
+
+const scrollTopBtn = document.querySelector('.menu-toggle');
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });

@@ -13,7 +13,6 @@
   <!-- NAVBAR -->
   <header class="header">
     <nav class="nav container">
-      <h1 class="logo">Maurício</h1>
 
       <ul class="nav-links">
         <li><a href="#about" data-i18n="about">Sobre</a></li>
@@ -23,23 +22,65 @@
 
       <!-- IDIOMAS -->
       <div class="lang-switch">
-        <button onclick="setLanguage('pt')">PT</button>
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('es')">ES</button>
-        <button onclick="toggleTheme()">🌙</button>
-      </div>
+        <button onclick="setLanguage('pt')" aria-label="Português" data-lang="pt">
+          <img src="assets/images/br.svg" alt="">
+        </button>
 
-      <button class="menu-toggle">☰</button>
+        <button onclick="setLanguage('en')" aria-label="English" data-lang="en">
+          <img src="assets/images/us.svg" alt="">
+        </button>
+
+        <button onclick="setLanguage('es')" aria-label="Español" data-lang="es">
+          <img src="assets/images/es.svg" alt="">
+        </button>
+
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
+          <span class="icon">🌙</span>
+        </button>
+
+        <button class="menu-toggle">
+          <img src="assets/images/Logo fundo escuro.svg" alt="">
+        </button>
+
+      </div>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero container" data-animate>
-    <div>
-      <h2 data-i18n="title">Desenvolvedor Front-End</h2>
-      <p data-i18n="subtitle">Criando experiências digitais modernas</p>
-      <a href="#projects" class="btn" data-i18n="cta">Ver Projetos</a>
+
+    <div class="hero-content">
+
+      <!-- TEXTO -->
+      <div class="hero-text">
+        <h2 data-i18n="title">Desenvolvedor Fullstack</h2>
+        <p data-i18n="subtitle">Criando experiências digitais modernas</p>
+
+        <!-- REDES SOCIAIS -->
+        <div class="social-links">
+
+          <a href="https://linkedin.com/in/mauricio-castelo-branco" target="_blank">
+            <img src="assets/images/linkedin.svg" alt="LinkedIn">
+          </a>
+
+          <a href="https://github.com/mauriciocastelobranco" target="_blank">
+            <img src="assets/images/github.svg" alt="GitHub">
+          </a>
+
+          <a href="https://instagram.com/mauricioricci" target="_blank">
+            <img src="assets/images/instagram.svg" alt="Instagram">
+          </a>
+
+        </div>
+      </div>
+
+      <!-- FOTO -->
+      <div class="hero-image">
+        <img src="assets/images/me.png" alt="Minha foto">
+      </div>
+
     </div>
+
   </section>
 
   <!-- SOBRE -->
@@ -70,7 +111,7 @@
   </section>
 
   <footer class="footer">
-    <p>© 2026 Maurício</p>
+    <p>Desenvolvido por Maurício Castelo Branco.</p>
   </footer>
 
   <script src="assets/js/script.js"></script>
