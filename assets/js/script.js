@@ -12,11 +12,14 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
+      entry.target.classList.add('show'); // 👈 ADICIONA ISSO
     }
   });
 }, { threshold: 0.2 });
 
 elements.forEach(el => observer.observe(el));
+document.querySelectorAll('.project-card')
+  .forEach(card => observer.observe(card));
 
 // SISTEMA DE TRADUÇÃO
 const translations = {
@@ -24,7 +27,7 @@ const translations = {
     title: "Desenvolvedor Fullstack",
     subtitle: "Criando experiências digitais modernas",
     cta: "Ver Projetos",
-    about: "Sobre",
+    about: "Sobre mim",
     about_text: "Sou desenvolvedor focado em criar interfaces bonitas, rápidas e responsivas.",
     projects: "Projetos",
     contact: "Contato"

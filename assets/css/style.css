@@ -7,7 +7,7 @@
 
 /* VARIÁVEIS */
 :root {
-  --primary: #3b82f6;
+  --primary: #2563eb;
   --dark: #0f172a;
   --light: #f8fafc;
   --glass: rgba(15, 23, 42, 0.7);
@@ -15,7 +15,8 @@
 
 /* BASE */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
   background: var(--light);
   color: var(--dark);
 }
@@ -32,7 +33,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .hero-text {
@@ -43,10 +44,14 @@ body {
 }
 
 .hero-text h2 {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
 .hero-text p {
+  font-size: 1.1rem;
+  max-width: 480px;
   margin-top: 1rem;
   color: #64748b;
 }
@@ -68,25 +73,49 @@ body {
 }
 
 .social-links {
-  margin-top: 1.5rem;
   display: flex;
   gap: 12px;
+  margin-top: 1rem;
 }
 
 .social-links a {
-  width: 38px;
-  height: 38px;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.1);
   border-radius: 10px;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.1);
+  color: #777777; /* cor neutra inicial */
+  font-size: 18px;
+}
+
+/* LINKEDIN */
+/* LINKEDIN */
+/* LINKEDIN */
+.social-links a.linkedin:hover {
+  color: #0A66C2;
+}
+
+/* GITHUB */
+body.light .social-links a.github:hover {
+  color: #24292e;
+}
+
+body.dark .social-links a.github:hover {
+  color: #f0f6fc;
+}
+
+/* INSTAGRAM */
+.social-links a.instagram:hover {
+  color: #E1306C;
 }
 
 .social-links a:hover {
-  transform: translateY(-3px);
-  background: var(--primary);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
 }
 
 .social-links img {
@@ -166,7 +195,7 @@ body {
 
 /* HERO */
 .hero {
-  padding: 6rem 0;
+  padding: 8rem 0 6rem;
   text-align: center;
 }
 
@@ -196,37 +225,176 @@ body {
 
 /* SEÇÕES */
 .section {
-  padding: 4rem 0;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.section .container {
+  max-width: 900px;
 }
 
 /* CARDS */
 .projects-grid {
-  display: grid;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-top: 2rem;
 }
 
-.card {
-  background: white;
+/* CARD */
+.project-card {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: transparent;
+  backdrop-filter: none;
+  border: 1px solid rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+.project-card:nth-child(odd) {
+  padding-right: 2rem;
+  transform: translateX(-60px);
+}
+
+.project-card:nth-child(even) {
+  flex-direction: row-reverse;
+  transform: translateX(60px);
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.card img {
+.project-image img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.6s ease;
+}
+
+.project-image {
+  max-width: 55%;
+  height: 300px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* CONTEÚDO */
+.project-content {
+  flex: 0 0 45%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.project-content h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 55ch;
+  opacity: 0.8;
+}
+
+/* TAG */
+.tag {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.05);
+  width: fit-content;
+}
+
+/* TEXTO */
+.project-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* BOTÃO */
+.project-button {
+  margin-top: 1rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary);
+  width: fit-content;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-button::after {
+  content: "→";
+  margin-left: 6px;
   transition: 0.3s;
 }
 
-.card:hover img {
-  transform: scale(1.05);
+.project-button:hover::after {
+  margin-left: 10px;
+  transform: translateX(4px);
 }
+
+/* DARK MODE */
+body.dark .project-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+body.dark .tag {
+  background: rgba(255,255,255,0.1);
+}
+
+body.dark .project-button {
+  text-decoration: none;
+  color: white;
+}
+
+.projects {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.projects h2 {
+  position: relative;
+  z-index: 3; /* 👈 título sempre acima */
+}
+
+
 
 /* ANIMAÇÃO BASE */
 [data-animate] {
@@ -319,23 +487,23 @@ body.light {
     color: white;
     font-size: 1.5rem;
   }
-}
 
-/* DELAY EM CASCATA (efeito premium) */
-.projects-grid .card:nth-child(1) {
-  transition-delay: 0.1s;
-}
+  .project-card {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+  }
 
-.projects-grid .card:nth-child(2) {
-  transition-delay: 0.2s;
-}
+  .project-image {
+    order: 0 !important;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+  }
 
-.projects-grid .card:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-.projects-grid .card:nth-child(4) {
-  transition-delay: 0.4s;
+  .project-content {
+    max-width: 100%;
+  }
 }
 
 /* CONTAINER DOS CONTROLES */
@@ -348,6 +516,7 @@ body.light {
 /* BOTÕES PADRÃO */
 .lang-switch button,
 .theme-toggle {
+  all: unset;
   width: 38px;
   height: 38px;
   border: none;
@@ -365,12 +534,6 @@ body.light {
 .lang-switch button:hover,
 .theme-toggle:hover {
   transform: translateY(-2px);
-  background: var(--primary);
-}
-
-/* BOTÃO ATIVO (idioma atual) */
-.lang-switch button.active {
-  background: var(--primary);
 }
 
 /* ÍCONES SVG */
@@ -384,4 +547,28 @@ body.light {
 /* DARK MODE ICON */
 .theme-toggle .icon {
   font-size: 16px;
+}
+
+.section:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 1px;
+  margin: 4rem auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.3),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+body.dark .section:not(:last-of-type)::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
 }

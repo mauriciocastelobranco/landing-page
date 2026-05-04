@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfólio de Maurício - Desenvolvedor Web">
-  <title>Meu Portfólio</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Portfolio Landing</title>
+
 </head>
 <body>
 
@@ -47,7 +49,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero container" data-animate>
+  <section class="hero section container" data-animate>
 
     <div class="hero-content">
 
@@ -59,28 +61,27 @@
         <!-- REDES SOCIAIS -->
         <div class="social-links">
 
-          <a href="https://linkedin.com/in/mauricio-castelo-branco" target="_blank">
-            <img src="assets/images/linkedin.svg" alt="LinkedIn">
+          <a href="https://linkedin.com/in/mauricio-castelo-branco" target="_blank" class="linkedin">
+            <i class="fab fa-linkedin-in"></i>
           </a>
 
-          <a href="https://github.com/mauriciocastelobranco" target="_blank">
-            <img src="assets/images/github.svg" alt="GitHub">
+          <a href="https://github.com/mauriciocastelobranco" target="_blank" class="github">
+            <i class="fab fa-github"></i>
           </a>
 
-          <a href="https://instagram.com/mauricioricci" target="_blank">
-            <img src="assets/images/instagram.svg" alt="Instagram">
+          <a href="https://instagram.com/mauricioricci" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
           </a>
 
         </div>
+
       </div>
 
       <!-- FOTO -->
-      <div class="hero-image">
-        <img src="assets/images/me.png" alt="Minha foto">
-      </div>
-
+        <div class="hero-image">
+          <img src="assets/images/me.png" alt="Minha foto">
+        </div>
     </div>
-
   </section>
 
   <!-- SOBRE -->
@@ -96,18 +97,71 @@
     <h2 data-i18n="projects">Projetos</h2>
 
     <div class="projects-grid">
-      <div class="card">
-        <img src="assets/img/projeto1.jpg" alt="Projeto 1">
-        <h3>Projeto 1</h3>
-        <p>Descrição breve do projeto.</p>
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="assets/images/routinecare.png" alt="Projeto 1">
+        </div>
+
+        <div class="project-content">
+          <span class="tag">Fullstack</span>
+
+          <h3>Routine Care</h3>
+
+          <p>
+            Uma plataforma web desenvolvida para otimizar a gestão de cuidados diários de pacientes. O sistema permite que cuidadores organizem rotinas de medicação, higiene e alimentação, garantindo que o histórico de saúde seja registrado de forma precisa e acessível. O foco principal é reduzir falhas de comunicação e proporcionar tranquilidade para as famílias e profissionais envolvidos.
+          </p>
+
+          <a href="https://github.com/mauriciocastelobranco/routine-care" target="_blank" class="project-button">Ver projeto</a>
+        </div>
       </div>
+
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="assets/images/routinecare.png" alt="Projeto 2">
+        </div>
+
+        <div class="project-content">
+          <span class="tag">Frontend</span>
+
+          <h3>Dev Portfolio</h3>
+
+          <p>
+            Uma plataforma web desenvolvida para otimizar a gestão de cuidados diários de pacientes. O sistema permite que cuidadores organizem rotinas de medicação, higiene e alimentação, garantindo que o histórico de saúde seja registrado de forma precisa e acessível. O foco principal é reduzir falhas de comunicação e proporcionar tranquilidade para as famílias e profissionais envolvidos.
+          </p>
+
+          <a href="#" class="project-button">Ver projeto</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="assets/images/routinecare.png" alt="Projeto 3">
+        </div>
+
+        <div class="project-content">
+          <span class="tag">Web App</span>
+
+          <h3>Task Manager</h3>
+
+          <p>
+            Aplicação para gerenciamento de tarefas com foco em produtividade, permitindo criação,
+            organização e acompanhamento de atividades com interface simples e eficiente.
+          </p>
+
+          <a href="#" class="project-button">Ver projeto</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- CONTATO -->
   <section id="contact" class="section container" data-animate>
     <h2 data-i18n="contact">Contato</h2>
-    <p>Email: seuemail@email.com</p>
+    <p>Email: mauriciocastelobranco@gmail.com</p>
   </section>
 
   <footer class="footer">
