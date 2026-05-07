@@ -15,7 +15,9 @@
 
 /* BASE */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   background: var(--light);
   color: var(--dark);
@@ -45,8 +47,8 @@ body {
 
 .hero-text h2 {
   font-size: 3.5rem;
-  font-weight: 600;
-  letter-spacing: -1px;
+  font-weight: 700;
+  letter-spacing: -2px;
 }
 
 .hero-text p {
@@ -54,6 +56,7 @@ body {
   max-width: 480px;
   margin-top: 1rem;
   color: #64748b;
+  font-weight: 400;
 }
 
 .hero-image img {
@@ -93,8 +96,6 @@ body {
 }
 
 /* LINKEDIN */
-/* LINKEDIN */
-/* LINKEDIN */
 .social-links a.linkedin:hover {
   color: #0A66C2;
 }
@@ -124,6 +125,34 @@ body.dark .social-links a.github:hover {
 }
 
 /* SOBRE MIM */
+.tech-title {
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  position: relative;
+}
+
+.tech-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin: 10px auto 0;
+  background: rgba(100,116,139,0.3);
+}
+
+body.dark .tech-title {
+  color: rgba(255,255,255,0.7);
+}
+
+body.dark .tech-title::after {
+  background: rgba(255,255,255,0.15);
+}
+
 .tech-stack {
   margin-top: 3rem;
   display: grid;
@@ -135,21 +164,13 @@ body.dark .social-links a.github:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 1rem 1.2rem;
-
   border-radius: 18px;
-
   background: rgba(255,255,255,0.7);
-
   border: 1px solid rgba(0,0,0,0.06);
-
   backdrop-filter: blur(12px);
-
   transition: all 0.35s ease;
-
   color: #0f172a;
-
   cursor: default;
 }
 
@@ -222,7 +243,7 @@ body.dark .tech-item {
 
 .tech-item.bootstrap:hover {
   border-color: #7952b3;
-   box-shadow:
+  box-shadow:
     0 0 12px rgba(121,82,179,0.5),
     0 0 24px rgba(121,82,179,0.3);
   transform: translateY(-4px);
@@ -233,20 +254,38 @@ body.dark .tech-item {
   color: #7952b3;
 }
 
-body.light .tech-item.github:hover {
+.tech-item.github:hover {
   color: #24292e;
 
   box-shadow:
-    0 0 12px rgba(36,41,46,0.2),
-    0 0 24px rgba(36,41,46,0.15);
+  0 0 12px rgba(36,41,46,0.2),
+  0 0 24px rgba(36,41,46,0.15);
+  transform: translateY(-4px);
+}
+
+.tech-item.github:hover i,
+.tech-item.github:hover span {
+  color: #24292e;
 }
 
 body.dark .tech-item.github:hover {
-  color: #f8fafc;
-
   box-shadow:
     0 0 12px rgba(255,255,255,0.3),
     0 0 24px rgba(255,255,255,0.2);
+  transform: translateY(-4px);
+}
+
+body.dark .tech-item.github:hover i,
+body.dark .tech-item.github:hover span {
+  color: #f8fafc;
+}
+
+.tech-item.sql:hover {
+border-color: #24292e;
+  box-shadow:
+  0 0 12px rgba(255, 255, 255, 0.3),
+  0 0 24px rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
 }
 
 .tech-item.sql:hover {
@@ -260,10 +299,6 @@ body.dark .tech-item.github:hover {
 .tech-item.sql:hover i,
 .tech-item.sql:hover span {
   color: #4db6ac;
-}
-
-.tech-item:hover {
-  transform: translateY(-4px);
 }
 
 /* NAVBAR PREMIUM */
@@ -360,6 +395,7 @@ body.dark .tech-item.github:hover {
   border-radius: 10px;
   text-decoration: none;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 .btn:hover {
@@ -491,7 +527,7 @@ body.dark .tech-item.github:hover {
   margin-top: 1rem;
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--primary);
   width: fit-content;
   position: relative;
@@ -567,6 +603,88 @@ body.dark .header {
 body.light {
   background: #f8fafc;
   color: #0f172a;
+}
+
+/* CONTACT */
+.contact {
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-container {
+  max-width: 700px;
+  text-align: center;
+}
+
+.contact-label {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.08);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.contact-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  background: #0f172a;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 20px rgba(15,23,42,0.2),
+    0 0 40px rgba(15,23,42,0.1);
+}
+
+body.dark .contact-text {
+  color: rgba(255,255,255,0.65);
+}
+
+body.dark .contact-button {
+  background: white;
+  color: #020617;
+}
+
+body.dark .contact-button:hover {
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.15),
+    0 0 40px rgba(255,255,255,0.08);
+}
+
+.contact-email {
+  margin-top: 1.8rem;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  letter-spacing: 0.3px;
 }
 
 /* FOOTER */

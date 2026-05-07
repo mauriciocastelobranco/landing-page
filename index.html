@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Portfolio Landing</title>
 
 </head>
@@ -89,52 +92,55 @@
 
     <h2 data-i18n="about">Sobre mim</h2>
     <p data-i18n="about_text">
-      Sou desenvolvedor focado em criar interfaces bonitas, rápidas e responsivas.
+      Sou um desenvolvedor apaixonado por construir soluções que resolvem problemas reais com eficiência e elegância. Minha trajetória profissional consolidou-se na Administração Imobiliária, um setor que me exigiu extrema organização, resiliência e uma comunicação interpessoal assertiva para mediar interesses e gerir processos complexos.
+      Hoje, traduzo essa bagagem para a tecnologia. Como desenvolvedor Full Stack, foco meu trabalho no ecossistema Ruby on Rails e em ferramentas modernas. Mais do que escrever código, aplico meu pensamento analítico e proatividade para entender as regras de negócio e antecipar soluções que tragam valor real ao usuário final.
+      Sou um entusiasta do aprendizado contínuo e da colaboração em equipe, acreditando que a adaptabilidade é tão fundamental para o sucesso de um projeto quanto a escolha da stack tecnológica. Meu objetivo é unir maturidade profissional e rigor técnico para entregar aplicações limpas, escaláveis e de alto impacto.
     </p>
 
+    <h3 class="tech-title" data-i18n="Tech">Ferramentas</h3>
     <div class="tech-stack">
 
-  <div class="tech-item ruby">
-    <i class="fa-solid fa-gem"></i>
-    <span>Ruby</span>
-  </div>
+      <div class="tech-item ruby">
+        <i class="fa-solid fa-gem"></i>
+        <span>Ruby</span>
+      </div>
 
-  <div class="tech-item rails">
-    <i class="fa-solid fa-gem"></i>
-    <span>Ruby on Rails</span>
-  </div>
+      <div class="tech-item rails">
+        <i class="fa-solid fa-gem"></i>
+        <span>Ruby on Rails</span>
+      </div>
 
-  <div class="tech-item js">
-    <i class="fa-brands fa-js"></i>
-    <span>JavaScript</span>
-  </div>
+      <div class="tech-item js">
+        <i class="fa-brands fa-js"></i>
+        <span>JavaScript</span>
+      </div>
 
-  <div class="tech-item html">
-    <i class="fa-brands fa-html5"></i>
-    <span>HTML5</span>
-  </div>
+      <div class="tech-item html">
+        <i class="fa-brands fa-html5"></i>
+        <span>HTML5</span>
+      </div>
 
-  <div class="tech-item css">
-    <i class="fa-brands fa-css3-alt"></i>
-    <span>CSS3</span>
-  </div>
+      <div class="tech-item css">
+        <i class="fa-brands fa-css3-alt"></i>
+        <span>CSS3</span>
+      </div>
 
-  <div class="tech-item sql">
-    <i class="fa-solid fa-database"></i>
-    <span>SQL</span>
-  </div>
+      <div class="tech-item sql">
+        <i class="fa-solid fa-database"></i>
+        <span>SQL</span>
+      </div>
 
-  <div class="tech-item github">
-    <i class="fa-brands fa-github"></i>
-    <span>GitHub</span>
-  </div>
+      <div class="tech-item github">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+      </div>
 
-  <div class="tech-item bootstrap">
-    <i class="fa-brands fa-bootstrap"></i>
-    <span>Bootstrap</span>
-  </div>
+      <div class="tech-item bootstrap">
+        <i class="fa-brands fa-bootstrap"></i>
+        <span>Bootstrap</span>
+      </div>
 
-</div>
+    </div>
   </section>
 
   <!-- PROJETOS -->
@@ -153,11 +159,11 @@
 
           <h3>Routine Care</h3>
 
-          <p>
+          <p data-i18n="project1_text">
             Uma plataforma web desenvolvida para otimizar a gestão de cuidados diários de pacientes. O sistema permite que cuidadores organizem rotinas de medicação, higiene e alimentação, garantindo que o histórico de saúde seja registrado de forma precisa e acessível. O foco principal é reduzir falhas de comunicação e proporcionar tranquilidade para as famílias e profissionais envolvidos.
           </p>
 
-          <a href="https://github.com/mauriciocastelobranco/routine-care" target="_blank" class="project-button">Ver projeto</a>
+          <a href="https://github.com/mauriciocastelobranco/routine-care" target="_blank" class="project-button" data-i18n="project_link">Ver projeto</a>
         </div>
       </div>
 
@@ -176,7 +182,7 @@
             Uma plataforma web desenvolvida para otimizar a gestão de cuidados diários de pacientes. O sistema permite que cuidadores organizem rotinas de medicação, higiene e alimentação, garantindo que o histórico de saúde seja registrado de forma precisa e acessível. O foco principal é reduzir falhas de comunicação e proporcionar tranquilidade para as famílias e profissionais envolvidos.
           </p>
 
-          <a href="#" class="project-button">Ver projeto</a>
+          <a href="#" class="project-button" target="_blank" data-i18n="project_link">Ver projeto</a>
         </div>
       </div>
 
@@ -196,7 +202,7 @@
             organização e acompanhamento de atividades com interface simples e eficiente.
           </p>
 
-          <a href="#" class="project-button">Ver projeto</a>
+          <a href="#" class="project-button" target="_blank" data-i18n="project_link">Ver projeto</a>
         </div>
       </div>
 
@@ -204,9 +210,34 @@
   </section>
 
   <!-- CONTATO -->
-  <section id="contact" class="section container" data-animate>
+  <section class="section container contact" id="contact" data-animate>
     <h2 data-i18n="contact">Contato</h2>
-    <p>Email: mauriciocastelobranco@gmail.com</p>
+
+    <div class="contact-container">
+
+      <h2 class="contact-title" data-i18n="contact_title">
+        Vamos construir algo incrível juntos.
+      </h2>
+
+      <p class="contact-text" data-i18n="contact_text">
+        Estou disponível para oportunidades e projetos que valorizem design,
+        performance e experiência do usuário.
+      </p>
+
+      <a
+        href="mailto:mauriciocastelobranco@gmail.com"
+        class="contact-button"
+        data-i18n="contact_button"
+      >
+        Vamos conversar
+      </a>
+
+      <div class="contact-email">
+        mauriciocastelobranco@gmail.com
+      </div>
+
+    </div>
+
   </section>
 
   <footer class="footer">
