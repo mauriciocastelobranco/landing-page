@@ -62,7 +62,7 @@ body {
   object-fit: cover;
   border-radius: 5%;
   filter: grayscale(100%);
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
@@ -121,6 +121,149 @@ body.dark .social-links a.github:hover {
 .social-links img {
   width: 18px;
   height: 18px;
+}
+
+/* SOBRE MIM */
+.tech-stack {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 1rem 1.2rem;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.7);
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  backdrop-filter: blur(12px);
+
+  transition: all 0.35s ease;
+
+  color: #0f172a;
+
+  cursor: default;
+}
+
+body.dark .tech-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: #f8fafc;
+}
+
+.tech-item i,
+.tech-item span {
+  font-size: 1rem;
+  transition: all 0.35s ease;
+}
+
+.tech-item.ruby:hover,
+.tech-item.rails:hover {
+    color: #cc342d;
+
+  box-shadow:
+    0 0 12px rgba(204,52,45,0.5),
+    0 0 24px rgba(204,52,45,0.3);
+  transform: translateY(-4px);
+}
+
+.tech-item.ruby:hover i,
+.tech-item.rails:hover i {
+  color: #cc342d;
+}
+
+.tech-item.js:hover {
+  border-color: #f7df1e;
+  box-shadow:
+    0 0 12px rgba(247,223,30,0.5),
+    0 0 24px rgba(247,223,30,0.3);
+  transform: translateY(-4px);
+}
+
+.tech-item.js:hover i,
+.tech-item.js:hover span {
+  color: #f7df1e;
+}
+
+.tech-item.html:hover {
+  border-color: #e34f26;
+  box-shadow:
+    0 0 12px rgba(227,79,38,0.5),
+    0 0 24px rgba(227,79,38,0.3);
+  transform: translateY(-4px);
+}
+
+.tech-item.html:hover i,
+.tech-item.html:hover span {
+  color: #e34f26;
+}
+
+.tech-item.css:hover {
+  border-color: #1572b6;
+  box-shadow:
+    0 0 12px rgba(21,114,182,0.5),
+    0 0 24px rgba(21,114,182,0.3);
+  transform: translateY(-4px);
+}
+
+.tech-item.css:hover i,
+.tech-item.css:hover span {
+  color: #1572b6;
+}
+
+.tech-item.bootstrap:hover {
+  border-color: #7952b3;
+   box-shadow:
+    0 0 12px rgba(121,82,179,0.5),
+    0 0 24px rgba(121,82,179,0.3);
+  transform: translateY(-4px);
+}
+
+.tech-item.bootstrap:hover i,
+.tech-item.bootstrap:hover span {
+  color: #7952b3;
+}
+
+body.light .tech-item.github:hover {
+  color: #24292e;
+
+  box-shadow:
+    0 0 12px rgba(36,41,46,0.2),
+    0 0 24px rgba(36,41,46,0.15);
+}
+
+body.dark .tech-item.github:hover {
+  color: #f8fafc;
+
+  box-shadow:
+    0 0 12px rgba(255,255,255,0.3),
+    0 0 24px rgba(255,255,255,0.2);
+}
+
+.tech-item.sql:hover {
+  border-color: #4db6ac;
+  box-shadow:
+    0 0 12px rgba(77,182,172,0.5),
+    0 0 24px rgba(77,182,172,0.3);
+  transform: translateY(-4px);
+}
+
+.tech-item.sql:hover i,
+.tech-item.sql:hover span {
+  color: #4db6ac;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px);
 }
 
 /* NAVBAR PREMIUM */
@@ -428,10 +571,56 @@ body.light {
 
 /* FOOTER */
 .footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
+  position: relative;
+  width: 100%;
+  margin-top: 6rem;
+  padding: 2rem 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  color: #64748b;
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.2),
+    transparent
+  );
+}
+
+body.dark .footer {
+  color: rgba(255,255,255,0.6);
+}
+
+body.dark .footer::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
 }
 
 /* MOBILE */
@@ -503,6 +692,16 @@ body.light {
 
   .project-content {
     max-width: 100%;
+  }
+
+  .tech-stack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .tech-stack {
+    grid-template-columns: 1fr;
   }
 }
 

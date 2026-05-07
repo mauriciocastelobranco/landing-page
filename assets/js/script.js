@@ -30,7 +30,8 @@ const translations = {
     about: "Sobre mim",
     about_text: "Sou desenvolvedor focado em criar interfaces bonitas, rápidas e responsivas.",
     projects: "Projetos",
-    contact: "Contato"
+    contact: "Contato",
+    footer: "Projetado e desenvolvido por Maurício Castelo Branco."
   },
   en: {
     title: "Fullstack Developer",
@@ -39,7 +40,8 @@ const translations = {
     about: "About",
     about_text: "I am a developer focused on building beautiful, fast and responsive interfaces.",
     projects: "Projects",
-    contact: "Contact"
+    contact: "Contact",
+    footer: "Designed & built by Maurício Castelo Branco."
   },
   es: {
     title: "Desarrollador Fullstack",
@@ -48,7 +50,8 @@ const translations = {
     about: "Sobre mí",
     about_text: "Soy un desarrollador enfocado en crear interfaces bonitas, rápidas y responsivas.",
     projects: "Proyectos",
-    contact: "Contacto"
+    contact: "Contacto",
+    footer: "Diseñado y desarrollado por Maurício Castelo Branco."
   }
 };
 
@@ -107,3 +110,19 @@ scrollTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+const footer = document.querySelector('.footer');
+
+const footerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      footer.style.opacity = '1';
+      footer.style.transform = 'translateY(0)';
+      footer.style.filter = 'blur(0)';
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+footerObserver.observe(footer);
