@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* VARIÁVEIS */
 :root {
   --primary: #2563eb;
@@ -41,22 +45,28 @@ body {
 .hero-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* mantém alinhado à esquerda */
+  align-items: center;
+  text-align: center;
   gap: 10px;
 }
 
 .hero-text h2 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: -2px;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: 0px;
+  font-weight: 800;
 }
 
 .hero-text p {
+  margin-top: 1.5rem;
+  max-width: 700px;
   font-size: 1.1rem;
-  max-width: 480px;
-  margin-top: 1rem;
+  line-height: 1.8;
   color: #64748b;
-  font-weight: 400;
+}
+
+body.dark .hero-text p {
+  color: rgba(255,255,255,0.72);
 }
 
 .hero-image img {
@@ -125,6 +135,25 @@ body.dark .social-links a.github:hover {
 }
 
 /* SOBRE MIM */
+
+.about-content {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-content p {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #64748b;
+}
+
+body.dark .about-content p {
+  color: rgba(255,255,255,0.72);
+}
+
 .tech-title {
   margin-top: 3.5rem;
   margin-bottom: 1.2rem;
@@ -859,6 +888,18 @@ body.dark .footer::before {
   height: 20px;
   object-fit: cover;
   border-radius: 3px;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
+}
+
+/* HOVER - COLORIDO */
+.lang-switch button:hover img {
+  filter: grayscale(0%);
+}
+
+/* ATIVO - COLORIDO */
+.lang-switch button.active img {
+  filter: grayscale(0%);
 }
 
 /* DARK MODE ICON */

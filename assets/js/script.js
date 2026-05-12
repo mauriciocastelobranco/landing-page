@@ -24,12 +24,17 @@ document.querySelectorAll('.project-card')
 // SISTEMA DE TRADUÇÃO
 const translations = {
   pt: {
-    title: "Desenvolvedor Fullstack",
-    subtitle: "Criando experiências digitais modernas",
+    title: "Maurício Castelo Branco",
+    subtitle:
+      "Desenvolvedor Full Stack focado em criar aplicações modernas, escaláveis e orientadas à experiência do usuário.",
     cta: "Ver Projetos",
     about: "Sobre mim",
-    about_text: "Sou um desenvolvedor apaixonado por construir soluções que resolvem problemas reais com eficiência e elegância. Minha trajetória profissional consolidou-se na Administração Imobiliária, um setor que me exigiu extrema organização, resiliência e uma comunicação interpessoal assertiva para mediar interesses e gerir processos complexos. Hoje, traduzo essa bagagem para a tecnologia. Como desenvolvedor Full Stack, foco meu trabalho no ecossistema Ruby on Rails e em ferramentas modernas. Mais do que escrever código, aplico meu pensamento analítico e proatividade para entender as regras de negócio e antecipar soluções que tragam valor real ao usuário final. Sou um entusiasta do aprendizado contínuo e da colaboração em equipe, acreditando que a adaptabilidade é tão fundamental para o sucesso de um projeto quanto a escolha da stack tecnológica. Meu objetivo é unir maturidade profissional e rigor técnico para entregar aplicações limpas, escaláveis e de alto impacto.",
-    Tech: "Ferramentas & Tecnologias",
+    about_text_1:
+    "Sou um desenvolvedor apaixonado por construir soluções que resolvem problemas reais com eficiência e elegância. Minha trajetória profissional consolidou-se na Administração Imobiliária, um setor que me exigiu extrema organização, resiliência e comunicação interpessoal assertiva.",
+    about_text_2:
+      "Hoje, traduzo essa bagagem para a tecnologia. Como desenvolvedor Full Stack, foco meu trabalho no ecossistema Ruby on Rails e em ferramentas modernas. Mais do que escrever código, aplico pensamento analítico e proatividade para entender regras de negócio e antecipar soluções.",
+    about_text_3:
+      "Sou um entusiasta do aprendizado contínuo e da colaboração em equipe, acreditando que adaptabilidade é tão fundamental quanto a escolha da stack tecnológica. Meu objetivo é unir maturidade profissional e rigor técnico para entregar aplicações limpas, escaláveis e de alto impacto.",
     projects: "Projetos",
     project1_text: "Uma plataforma web desenvolvida para otimizar a gestão de cuidados diários de pacientes. O sistema permite que cuidadores organizem rotinas de medicação, higiene e alimentação, garantindo que o histórico de saúde seja registrado de forma precisa e acessível. O foco principal é reduzir falhas de comunicação e proporcionar tranquilidade para as famílias e profissionais envolvidos.",
     project_link: "Ver Projeto",
@@ -40,11 +45,18 @@ const translations = {
     footer: "Projetado e desenvolvido por Maurício Castelo Branco."
   },
   en: {
-    title: "Fullstack Developer",
-    subtitle: "Creating modern digital experiences",
+    title: "Maurício Castelo Branco",
+    subtitle:
+      "Full Stack Developer focused on building modern, scalable applications with exceptional user experiences.",
     cta: "View Projects",
     about: "About",
-    about_text: "I am a developer passionate about building solutions that solve real-world problems with efficiency and elegance. My professional career was established in Real Estate Administration, a sector that required extreme organization, resilience, and assertive interpersonal communication to mediate interests and manage complex processes. Today, I translate that background into technology. As a Full Stack Developer, I focus my work on the Ruby on Rails ecosystem and modern tools. More than just writing code, I apply my analytical thinking and proactivity to understand business rules and anticipate solutions that deliver real value to the end user. I am an enthusiast of continuous learning and team collaboration, believing that adaptability is as fundamental to a project's success as the choice of the tech stack. My goal is to combine professional maturity with technical rigor to deliver clean, scalable, and high-impact applications.",
+    about_text_1:
+      "I am a developer passionate about building solutions that solve real-world problems with efficiency and elegance. My professional career was established in Real Estate Administration, a field that demanded strong organization, resilience, and assertive communication.",
+    about_text_2:
+      "Today, I translate that background into technology. As a Full Stack Developer, I focus my work on the Ruby on Rails ecosystem and modern tools. Beyond writing code, I apply analytical thinking and proactivity to understand business rules and anticipate solutions.",
+
+    about_text_3:
+      "I am passionate about continuous learning and team collaboration, believing adaptability is just as important as the choice of tech stack. My goal is to combine professional maturity with technical rigor to deliver clean, scalable, and high-impact applications.",
     Tech: "Tools & Technologies",
     projects: "Projects",
     project1_text: "A web platform developed to optimize the management of patients' daily care. The system allows caregivers to organize medication, hygiene, and feeding routines, ensuring that health history is recorded accurately and accessibly. The main focus is to reduce communication failures and provide peace of mind for families and professionals involved.",
@@ -56,11 +68,17 @@ const translations = {
     footer: "Designed & built by Maurício Castelo Branco."
   },
   es: {
-    title: "Desarrollador Fullstack",
-    subtitle: "Creando experiencias digitales modernas",
+    title: "Maurício Castelo Branco",
+    subtitle:
+      "Desarrollador Full Stack enfocado en crear aplicaciones modernas, escalables y centradas en la experiencia del usuario.",
     cta: "Ver Proyectos",
     about: "Sobre mí",
-    about_text: "Soy un desarrollador apasionado por construir soluciones que resuelven problemas reales con eficiencia y elegancia. Mi trayectoria profesional se consolidó en la Administración Inmobiliaria, un sector que me exigió extrema organización, resiliencia y una comunicación interpersonal asertiva para mediar intereses y gestionar procesos complejos. Hoy, traduzco esa experiencia al mundo de la tecnología. Como desarrollador Full Stack, enfoco mi trabajo en el ecosistema de Ruby on Rails y herramientas modernas. Más que escribir código, aplico mi pensamiento analítico y proactividad para comprender las reglas de negocio y anticipar soluciones que aporten un valor real al usuario final. Soy un entusiasta del aprendizaje continuo y de la colaboración en equipo, con la convicción de que la adaptabilidad es tan fundamental para el éxito de un proyecto como la elección del stack tecnológico. Mi objetivo es unir madurez profesional y rigor técnico para entregar aplicaciones limpias, escalables y de alto impacto.",
+    about_text_1:
+      "Soy un desarrollador apasionado por construir soluciones que resuelven problemas reales con eficiencia y elegancia. Mi trayectoria profesional se consolidó en la Administración Inmobiliaria, un sector que exigió organización, resiliencia y comunicación asertiva.",
+    about_text_2:
+      "Hoy traduzco esa experiencia al mundo de la tecnología. Como desarrollador Full Stack, enfoco mi trabajo en el ecosistema Ruby on Rails y herramientas modernas. Más que escribir código, aplico pensamiento analítico y proactividad para comprender reglas de negocio.",
+    about_text_3:
+      "Soy un entusiasta del aprendizaje continuo y de la colaboración en equipo, creyendo que la adaptabilidad es tan importante como la elección del stack tecnológico. Mi objetivo es unir madurez profesional y rigor técnico para crear aplicaciones limpias y escalables.",
     Tech: "Herramientas & Tecnologías",
     projects: "Proyectos",
     project1_text: "Una plataforma web desarrollada para optimizar la gestión de los cuidados diarios de los pacientes. El sistema permite a los cuidadores organizar las rutinas de medicación, higiene y alimentación, asegurando que el historial de salud se registre de manera precisa y accesible. El enfoque principal es reducir las fallas de comunicación y brindar tranquilidad a las familias y profesionales involucrados.",
