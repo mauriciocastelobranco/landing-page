@@ -43,6 +43,7 @@ user experience awareness
 visual consistency
 clean and organized code
 the ability to transform interfaces into modern digital experiences
+
 👨‍💻 Author
 
 Maurício Castelo Branco
